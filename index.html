@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZAHRA</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {},
+        },
+      };
+    </script>
+    <style>
+      .slider-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slides {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease;
+        display: none;
+      }
+
+      .slide.active {
+        display: block;
+      }
+
+      .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .navigation-dots {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .dot.active {
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <script>
+      load("header.html");
+      function load(url) {
+        req = new XMLHttpRequest();
+        req.open("GET", url, false);
+        req.send(null);
+        document.getElementById("header").innerHTML = req.responseText;
+      }
+    </script>
+
+    <section class="mb-8 slider-container">
+      <div class="slider">
+        <div class="slides">
+          <!-- Slide 1 -->
+          <div class="slide active">
+            <img
+              src="assets/slider_16_juni-2.jpg.webp"
+              alt="Slide 1"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <img
+              src="assets/slider_16_juni-1.jpg.webp"
+              alt="Slide 2"
+              class="object-cover w-full h-full"
+            />
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <img
+              src="assets/banner_vip_member_15_revisi.jpg.webp"
+              alt="Slide 3"
+              class="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+
+        <!-- Navigation dots -->
+        <div class="navigation-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Konten lainnya -->
+    <section class="px-4 py-8 sm:px-6 md:px-8 lg:px-10">
+      <div class="flex flex-wrap justify-between gap-4 md:gap-6">
+        <!-- Item 1 - TOP -->
+        <div class="w-[48%] sm:w-[23%] flex flex-col items-center">
+          <div
+            class="w-full aspect-[3/4] overflow-hidden flex justify-center items-center"
+          >
+            <img
+              src="assets/image 4.png"
+              alt="Striped Sweater"
+              class="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <h2 class="mt-2 text-base font-medium text-center sm:text-lg sm:mt-3">
+            TOP
+          </h2>
+        </div>
+
+        <!-- Item 2 - OUTER -->
+        <div class="w-[48%] sm:w-[23%] flex flex-col items-center">
+          <div
+            class="w-full aspect-[3/4] overflow-hidden flex justify-center items-center"
+          >
+            <img
+              src="assets/image 4.png"
+              alt="Black Leather Jacket"
+              class="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <h2 class="mt-2 text-base font-medium text-center sm:text-lg sm:mt-3">
+            OUTER
+          </h2>
+        </div>
+
+        <!-- Item 3 - DRESS -->
+        <div class="w-[48%] sm:w-[23%] flex flex-col items-center">
+          <div
+            class="w-full aspect-[3/4] overflow-hidden flex justify-center items-center"
+          >
+            <img
+              src="assets/image 4.png"
+              alt="Striped Dress"
+              class="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <h2 class="mt-2 text-base font-medium text-center sm:text-lg sm:mt-3">
+            DRESS
+          </h2>
+        </div>
+
+        <!-- Item 4 - BOTTOM -->
+        <div class="w-[48%] sm:w-[23%] flex flex-col items-center">
+          <div
+            class="w-full aspect-[3/4] overflow-hidden flex justify-center items-center"
+          >
+            <img
+              src="assets/image 4.png"
+              alt="Brown Jacket and Shorts"
+              class="object-contain w-full h-full transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+          <h2 class="mt-2 text-base font-medium text-center sm:text-lg sm:mt-3">
+            BOTTOM
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <section class="mt-5\">
+      <div><img src="assets/image 6.png" class="w-full" alt="" /></div>
+    </section>
+    <section
+      class="px-4 py-8 sm:px-6 md:px-8 mt-15 lg:px-10"
+      id="products-section"
+    >
+      <div class="mb-10 text-3xl text-center font-800">New Arrivals</div>
+      <div
+        class="flex flex-wrap justify-between gap-4 md:gap-6"
+        id="products-container"
+      ></div>
+      <div
+        class="px-10 py-5 mx-auto text-center text-white bg-gray-900 rounded cursor-pointer mt-15 w-fit"
+      >
+        <a href="newArrival.html"> View Products</a>
+      </div>
+    </section>
+
+    <div id="3"></div>
+    <script>
+      load("testimonial.html");
+      function load(url) {
+        req = new XMLHttpRequest();
+        req.open("GET", url, false);
+        req.send(null);
+        document.getElementById(3).innerHTML = req.responseText;
+      }
+    </script>
+    <div id="4"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

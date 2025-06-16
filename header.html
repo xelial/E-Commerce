@@ -1,0 +1,134 @@
+<!-- header.html -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zahra Header</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: black;
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .offer-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        animation: shine 3s infinite;
+      }
+
+      .offer-banner {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .offer-banner.hide {
+        transform: translateY(-100%);
+        height: 0;
+        padding: 0;
+        opacity: 0;
+      }
+
+      @keyframes shine {
+        100% {
+          left: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="max-w-[1200px] mx-auto px-4">
+      <div class="offer-banner text-center text-[px] font-semibold py-1">
+        BUY NOW AND BE OUR VIP AND SAVE 15% OFF ALL YEAR LONG
+      </div>
+      <header class="sticky top-0 flex items-center justify-between py-4">
+        <div class="flex items-center space-x-8">
+          <div class="leading-none select-none logo">
+            <a href="index.html" class="font-black text-[24px]">ZAHRA</a>
+          </div>
+          <nav
+            class="pl-5 flex items-center space-x-6 text-[14px] font-normal desktop-nav"
+          >
+            <div
+              class="relative flex items-center cursor-pointer select-none group nav-link"
+            >
+              <a href="newArrival.html">Shop</a>
+            </div>
+            <div class="relative cursor-pointer select-none nav-link">
+              On Sale
+            </div>
+            <div class="relative cursor-pointer select-none nav-link">
+              About Us
+            </div>
+          </nav>
+        </div>
+
+        <!-- Centered Search Bar -->
+        <div class="flex-1 px-8 desktop-search">
+          <label for="search" class="sr-only">Search for products</label>
+          <div
+            class="relative text-gray-400 border border-gray-500 rounded-full focus-within:text-gray-600"
+          >
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Search for products..."
+              class="block w-full py-2 pl-10 pr-4 text-sm placeholder-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-300 focus:bg-white"
+            />
+            <div
+              class="absolute inset-y-0 flex items-center pointer-events-none left-3"
+            >
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-6 desktop-actions">
+          <!-- Cart Icon -->
+          <a href="cart.html" class="relative">
+            <i class="text-xl fas fa-shopping-cart"></i>
+          </a>
+
+          <!-- User Icon -->
+          <a
+            href="account.html"
+            class="flex items-center justify-center w-10 h-10 transition bg-gray-100 rounded-full hover:bg-gray-200"
+          >
+            <i class="text-gray-600 fas fa-user"></i>
+          </a>
+        </div>
+      </header>
+    </div>
+
+    <script src="header.js"></script>
+  </body>
+</html>

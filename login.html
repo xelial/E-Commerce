@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page - Shoes</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="max-w-[1200px] mx-auto px-4">
+      <div class="offer-banner text-center text-[px] font-semibold py-1">
+        BUY NOW AND BE OUR VIP AND SAVE 15% OFF ALL YEAR LONG
+      </div>
+      <header class="sticky top-0 flex items-center justify-between py-4">
+        <div class="flex items-center space-x-8">
+          <div class="leading-none select-none logo">
+            <a href="index.html" class="font-black text-[24px]">ZAHRA</a>
+          </div>
+          <nav
+            class="pl-5 flex items-center space-x-6 text-[14px] font-normal desktop-nav"
+          >
+            <div
+              class="relative flex items-center cursor-pointer select-none group nav-link"
+            >
+              <a href="newArrival.html">Shop</a>
+            </div>
+            <div class="relative cursor-pointer select-none nav-link">
+              On Sale
+            </div>
+            <div class="relative cursor-pointer select-none nav-link">
+              About Us
+            </div>
+          </nav>
+        </div>
+
+        <!-- Centered Search Bar -->
+        <div class="flex-1 px-8 desktop-search">
+          <label for="search" class="sr-only">Search for products</label>
+          <div
+            class="relative text-gray-400 border border-gray-500 rounded-full focus-within:text-gray-600"
+          >
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Search for products..."
+              class="block w-full py-2 pl-10 pr-4 text-sm placeholder-gray-400 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-300 focus:bg-white"
+            />
+            <div
+              class="absolute inset-y-0 flex items-center pointer-events-none left-3"
+            >
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-6 desktop-actions">
+          <!-- Auth Section -->
+          <div class="flex items-center">
+            <!-- Not Logged In State -->
+            <div id="notLoggedIn" class="flex items-center space-x-4">
+              <a href="login.html" class="text-lg text-gray-500">Sign In</a>
+              <a
+                href="register.html"
+                class="px-6 py-2 text-lg font-medium text-white transition bg-gray-900 rounded-xl hover:bg-gray-700"
+              >
+                Sign Up
+              </a>
+            </div>
+
+            <!-- Logged In State -->
+            <div class="relative hidden">
+              <button
+                id="userMenuButton"
+                class="flex items-center justify-center w-10 h-10 transition bg-gray-100 rounded-full hover:bg-gray-200"
+              >
+                <i class="text-gray-600 fas fa-user"></i>
+              </button>
+
+              <!-- User dropdown menu -->
+              <div id="userDropdown" class="user-dropdown">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                  >My Account</a
+                >
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Orders</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                  >Wishlist</a
+                >
+                <a
+                  href="#"
+                  id="logoutButton"
+                  class="block px-4 py-2 text-red-500 hover:bg-gray-100"
+                >
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div
+      id="login"
+      class="flex items-center justify-center min-h-screen px-4 py-12"
+    >
+      <div
+        class="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-white shadow-2xl md:grid-cols-2 rounded-3xl"
+      >
+        <div class="relative hidden bg-center bg-cover bg-shoe-image md:block">
+          <img
+            src="assets/medium-shot-woman-sitting-chair_23-2149392849.jpg.avif"
+            alt=""
+            class="absolute inset-0 object-cover w-full h-full"
+          />
+        </div>
+
+        <!-- Login Form -->
+        <div class="flex flex-col justify-center p-10 bg-white sm:p-16">
+          <h2 class="mb-8 text-3xl font-extrabold text-gray-800">
+            Welcome Back
+          </h2>
+
+          <form class="space-y-6">
+            <!-- Email -->
+            <div class="relative">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-1 py-3 text-gray-900 placeholder-transparent border-b-2 border-gray-300 peer focus:outline-none focus:border-blue-500"
+                placeholder="Email address"
+              />
+              <label
+                for="email"
+                class="absolute left-1 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+              >
+                Email address
+              </label>
+            </div>
+
+            <!-- Password -->
+            <div class="relative">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                class="w-full px-1 py-3 text-gray-900 placeholder-transparent border-b-2 border-gray-300 peer focus:outline-none focus:border-blue-500"
+                placeholder="Password"
+              />
+              <label
+                for="password"
+                class="absolute left-1 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-sm"
+              >
+                Password
+              </label>
+            </div>
+
+            <!-- Options -->
+            <div class="flex items-center justify-between text-sm">
+              <label class="flex items-center gap-2 text-gray-600">
+                <input type="checkbox" class="bg-gray-900" />
+                Remember me
+              </label>
+              <a href="#" class="text-gray-900 hover:underline"
+                >Forgot password?</a
+              >
+            </div>
+
+            <!-- Submit Button -->
+            <a
+              href="index.html"
+              type="submit"
+              class="block w-full py-3 font-semibold text-center text-white transition duration-300 bg-gray-900 shadow-lg hover:bg-gray-700 rounded-xl"
+            >
+              Login
+            </a>
+          </form>
+
+          <!-- Divider -->
+          <div class="flex items-center gap-4 my-6">
+            <hr class="flex-grow border-gray-300" />
+            <span class="text-sm text-gray-400">OR</span>
+            <hr class="flex-grow border-gray-300" />
+          </div>
+
+          <!-- Social Logins -->
+          <div class="flex flex-col gap-4">
+            <button
+              class="flex items-center justify-center gap-3 px-4 py-2 transition bg-white border border-gray-300 rounded-xl hover:bg-gray-100"
+            >
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                class="w-5 h-5"
+                alt="Google"
+              />
+              Continue with Google
+            </button>
+          </div>
+
+          <!-- Sign Up Link -->
+          <p class="mt-6 text-sm text-center text-gray-600">
+            Don’t have an account?
+            <a
+              href="register.html"
+              class="font-bold text-gray-600 hover:underline"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="4"></div>
+    <script>
+      load("footer.html");
+      function load(url) {
+        req = new XMLHttpRequest();
+        req.open("GET", url, false);
+        req.send(null);
+        document.getElementById(4).innerHTML = req.responseText;
+      }
+    </script>
+  </body>
+</html>
