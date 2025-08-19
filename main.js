@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Dot navigation
   dots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       currentIndex = index;
@@ -66,22 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Auto slide (optional)
   let slideInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
   }, 5000);
-
-  // Pause on hover
-  const slider = document.querySelector(".slider");
-  slider.addEventListener("mouseenter", () => {
-    clearInterval(slideInterval);
-  });
-
-  slider.addEventListener("mouseleave", () => {
-    slideInterval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }, 5000);
-  });
 });
